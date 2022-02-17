@@ -12,7 +12,7 @@ host-arch := $(shell uname -m | \
 ARCH ?= ${host-arch}
 
 # LITMUS_KERNEL -- where to find the litmus kernel?
-LITMUS_KERNEL ?= ../litmus-rt
+LITMUS_KERNEL ?= ../linux
 
 
 # ##############################################################################
@@ -45,7 +45,7 @@ headers += -I${LIBLITMUS}/arch/${include-${ARCH}}/include/generated/uapi
 
 # combine options
 CPPFLAGS = ${flags-api} ${flags-${ARCH}} -DARCH=${ARCH} ${headers}
-CFLAGS   = ${flags-debug}
+CFLAGS   = ${flags-debug} -fPIC
 LDFLAGS  = ${flags-${ARCH}}
 
 # how to link against liblitmus

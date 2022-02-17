@@ -178,6 +178,7 @@ typedef enum  {
 	DPCP_SEM	= 4, /**< Distributed Priority Ceiling Protocol */
 	PCP_SEM		= 5, /**< Priority Ceiling Protocol */
 	DFLP_SEM	= 6, /**< Distributed FIFO Locking Protocol */
+	K_FMLP_SEM	= 7, /**< A k-exclusion-based FMLP */
 } obj_type_t;
 
 /**

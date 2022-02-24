@@ -396,6 +396,18 @@ static inline int open_fmlp_sem(int fd, int name)
 }
 
 /**
+ * Allocate a semaphore following the KFMLP protocol
+ * @param fd File descriptor to associate lock with
+ * @param name Name of the lock, user-chosen integer
+ * @param k The "k" value for k-exclusion.
+ * @return Object descriptor for given lock
+ */
+static inline int open_kfmlp_sem(int fd, int name, int k)
+{
+	return od_openx(fd, K_FMLP_SEM, name, &k);
+}
+
+/**
  * Allocate a semaphore following the SRP protocol
  * @param fd File descriptor to associate lock with
  * @param name Name of the lock, user-chosen integer

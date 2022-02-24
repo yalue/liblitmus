@@ -27,6 +27,7 @@ static struct {
 	LP(DPCP),
 	LP(PCP),
 	LP(DFLP),
+	LP(K_FMLP),
 };
 
 #define NUM_PROTOS (sizeof(protocol)/sizeof(protocol[0]))
